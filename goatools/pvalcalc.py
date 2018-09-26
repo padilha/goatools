@@ -1,4 +1,5 @@
-"""Options for calculating uncorrected p-values."""
+"""Options for calculating uncorrected p-values.
+This code was changed by Victor A. Padilha. In its default behavior, it calculates the over-representation of GO-terms."""
 
 __copyright__ = "Copyright (C) 2016-2018, DV Klopfenstein, H Tang et al., All rights reserved."
 __author__ = "DV Klopfenstein"
@@ -27,9 +28,9 @@ class FisherClass(PvalCalcBase):
     """From the 'fisher' package, use function, pvalue_population."""
 
     options = cx.OrderedDict([
-        ('up', 'right_tail'),
-        ('down', 'left_tail'),
-        ('updown', 'two_tail')
+        ('over', 'right_tail'),
+        ('under', 'left_tail'),
+        ('both', 'two_tail')
     ])
 
     def __init__(self, name, log, test_type):
@@ -49,9 +50,9 @@ class FisherScipyStats(PvalCalcBase):
     """From the scipy stats package, use function, fisher_exact."""
 
     options = cx.OrderedDict([
-        ('up', 'greater'),
-        ('down', 'less'),
-        ('updown', 'two-sided')
+        ('over', 'greater'),
+        ('under', 'less'),
+        ('both', 'two-sided')
     ])
 
     def __init__(self, name, log, test_type):
@@ -92,7 +93,7 @@ class FisherFactory(object):
     def __init__(self, **kws):
         self.log = kws['log'] if 'log' in kws else sys.stdout
         self.pval_fnc_name = kws["pvalcalc"] if "pvalcalc" in kws else "fisher"
-        self.test_type = kws['test_type'] if 'test_type' in kws else 'updown'
+        self.test_type = kws['test_type'] if 'test_type' in kws else 'over' # Default behavior: over-representation test
         self.pval_obj = self._init_pval_obj()
 
     def _init_pval_obj(self):

@@ -1,3 +1,14 @@
+This is a simple modification to the `goatools` package.
+In this modification I added the option `test_type` to the class `FisherFactory`
+(which is contained in the module `goatools.pvalcalc`). There are three options
+available:
+    * `test_type='over'`, which tests for over-representation of GO-terms (default behavior);
+    * `test_type='under'`, which tests for under-representation of GO-terms;
+    * `test_type='both'`, which tests for both (over-representation and under-representation);
+
+The remaining of the package is the standard `goatools` code.
+____
+
 # Tools for Gene Ontology
 
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.31628.svg)](http://dx.doi.org/10.5281/zenodo.31628)
@@ -282,7 +293,7 @@ strategy which may lead to slightly different q-values between runs.
 
 ## Want to Help?
 
-Prior to submitting your pull request, please add a test which verifies your code, and run: 
+Prior to submitting your pull request, please add a test which verifies your code, and run:
 ```
 make test
 ```
