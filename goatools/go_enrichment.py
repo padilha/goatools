@@ -323,8 +323,8 @@ class GOEnrichmentStudy(object):
         pop_n, study_n = self.pop_n, len(study)
         allterms = set(go2studyitems).union(set(self.go2popitems))
         if log is not None:
-            log.write("Calculating {N:,} uncorrected p-values using {PFNC}\n".format(
-                N=len(allterms), PFNC=self.pval_obj.name))
+            log.write("Calculating {N:,} uncorrected p-values using {PFNC} (representation test: {test})\n".format(
+                N=len(allterms), PFNC=self.pval_obj.name, test=self.pval_obj.test_type))
         calc_pvalue = self.pval_obj.calc_pvalue
 
         for term in allterms:
