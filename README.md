@@ -9,7 +9,7 @@ available:
 * `test_type='under'`, which tests for under-representation of GO-terms;
 * `test_type='both'`, which tests for both (over-representation and under-representation);
 
-The remaining of the package is the standard `goatools` code.
+The remaining of the package is the original `goatools` code.
 ____
 
 # Tools for Gene Ontology
