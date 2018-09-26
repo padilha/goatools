@@ -1,6 +1,6 @@
 ## What's different in this fork?
 
-This fork is a simple modification to the `goatools` package.
+This fork is a simple modification of the `goatools` package.
 In this modification I added the option `test_type` to the class `FisherFactory`
 (which is contained in the module `goatools.pvalcalc`). There are three options
 available:
