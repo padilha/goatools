@@ -1,10 +1,13 @@
+## What's different in this fork?
+
 This is a simple modification to the `goatools` package.
 In this modification I added the option `test_type` to the class `FisherFactory`
 (which is contained in the module `goatools.pvalcalc`). There are three options
 available:
-    * `test_type='over'`, which tests for over-representation of GO-terms (default behavior);
-    * `test_type='under'`, which tests for under-representation of GO-terms;
-    * `test_type='both'`, which tests for both (over-representation and under-representation);
+
+* `test_type='over'`, which tests for over-representation of GO-terms (default behavior);
+* `test_type='under'`, which tests for under-representation of GO-terms;
+* `test_type='both'`, which tests for both (over-representation and under-representation);
 
 The remaining of the package is the standard `goatools` code.
 ____
